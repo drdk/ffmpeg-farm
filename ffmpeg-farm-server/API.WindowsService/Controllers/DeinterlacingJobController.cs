@@ -48,7 +48,7 @@ namespace API.WindowsService.Controllers
 
             string arguments = string.Empty;
             
-            arguments += $@"-xerror -i ""{model.VideoSourceFilename}"" -vf yadif=1 -c:v mpeg2video -preset medium -c:a copy -map 0 -b:v 50000k -movflags +faststart -y ""{outputFilename}""";
+            arguments += $@"-xerror -i ""{model.VideoSourceFilename}"" -vf yadif=1 -c:v mpeg2video -preset medium -c:a copy -map 0:v -map 0:a -b:v 50000k -movflags +faststart -y ""{outputFilename}""";
             var jobs = new List<FFmpegJob>
             {
                 new DeinterlacingJob
