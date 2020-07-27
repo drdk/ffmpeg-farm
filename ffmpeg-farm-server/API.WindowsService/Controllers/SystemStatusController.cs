@@ -5,12 +5,14 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
+using API.WindowsService.Filters;
 using DR.Common.Monitoring.Contract;
 using DR.Common.Monitoring.Web.Models;
 
 namespace API.WindowsService.Controllers
 {
     [RoutePrefix("SystemStatus")] //leave out /api/ to fix borked routing in startup.cs
+    [ApiAuthorization]
     public class SystemStatusController : ApiController
     {
         private const string ApplicationName = "FfmpegFarm";

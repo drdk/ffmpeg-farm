@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Web.Http;
+using API.WindowsService.Filters;
 using API.WindowsService.Models;
 using Contract;
 
 namespace API.WindowsService.Controllers
 {
+    [ApiAuthorization]
     public class JobController : ApiController
     {
         private readonly IJobRepository _repository;

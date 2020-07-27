@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Web.Http;
+using API.WindowsService.Filters;
 using Contract;
 using Contract.Dto;
 using WebApi.OutputCache.V2;
 
 namespace API.WindowsService.Controllers
 {
+    [ApiAuthorization]
     public class TaskController : ApiController
     {
         private readonly IJobRepository _repository;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Linq;
 using System.ServiceProcess;
 using System.Timers;
 using API.Logging;
@@ -28,10 +29,14 @@ namespace API.WindowsService
 
         public void Start()
         {
-            var port = 9000;
-            var url = Environment.UserInteractive ? $"http://localhost:{port}/" : $"http://+:{port}/";
-            var readableUrl = url.Replace("+", Environment.MachineName);
-            _server = WebApp.Start<Startup>(url);
+            CheckHttpsSettings();
+
+            var uris = ConfigurationManager.AppSettings["ListenAddress"].Split(';');
+            var startOptions = new StartOptions();
+            foreach (var uri in uris)
+                startOptions.Urls.Add(uri);
+            _server = WebApp.Start<Startup>(startOptions);
+
             _timer = new Timer(TimeSpan.FromDays(1).TotalMilliseconds) { AutoReset = true, Enabled = true };
             _janitor = new Janitor(new Helper(), new NLogWrapper(ConfigurationManager.AppSettings["NLog-Appname"] ?? System.Reflection.Assembly.GetExecutingAssembly().FullName));
             _timer.Elapsed += (sender, args) =>
@@ -47,6 +52,20 @@ namespace API.WindowsService
             _timer?.Stop();
             _timer?.Dispose();
             _server?.Dispose();
+        }
+
+        /// <summary>
+        /// Check if ForceHttpsOnGet contradicts ListenAddress in config.
+        /// </summary>
+        private static void CheckHttpsSettings()
+        {
+            var endpointUrls = ConfigurationManager.AppSettings["ListenAddress"].Split(';');
+            if (bool.TryParse(ConfigurationManager.AppSettings["ForceHttpsOnGet"], out var forceForceHttps) && forceForceHttps)
+            {
+                var endpointUrl = endpointUrls.FirstOrDefault(u => u.Contains("https"));
+                if (string.IsNullOrEmpty(endpointUrl))
+                    throw new ConfigurationErrorsException($"Error in configuration. ForceHttpsOnGet is true but https is not configured in ListenAddress.");
+            }
         }
     }
 }

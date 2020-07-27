@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using API.WindowsService.Filters;
 using API.WindowsService.Models;
 using Contract;
 using Contract.Dto;
@@ -15,6 +16,7 @@ using WebApi.OutputCache.V2;
 
 namespace API.WindowsService.Controllers
 {
+    [ApiAuthorization]
     public class StatusController : ApiController
     {
         private readonly IJobRepository _repository;

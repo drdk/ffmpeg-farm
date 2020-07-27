@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using API.Service;
+using API.WindowsService.Filters;
 using API.WindowsService.Models;
 using Contract;
 
@@ -15,6 +16,7 @@ namespace API.WindowsService.Controllers
     /// <summary>
     /// Receives audio jobs orders.
     /// </summary>
+    [ApiAuthorization]
     public class AudioJobController : ApiController
     {
         private readonly IAudioJobRepository _repository;

@@ -4,11 +4,13 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using API.WindowsService.Filters;
 using API.WindowsService.Models;
 using Contract;
 
 namespace API.WindowsService.Controllers
 {
+    [ApiAuthorization]
     public class ScreenshotJobController : ApiController
     {
         private readonly IScreenshotJobRepository _repository;

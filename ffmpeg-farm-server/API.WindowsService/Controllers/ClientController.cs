@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Web.Http;
 using API.Service;
+using API.WindowsService.Filters;
 using Contract;
 using Dapper;
 using WebApi.OutputCache.V2;
 
 namespace API.WindowsService.Controllers
 {
+    [ApiAuthorization]
     public class ClientController : ApiController
     {
         private readonly IHelper _helper;

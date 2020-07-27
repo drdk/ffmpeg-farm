@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http.Formatting;
 using System.Web.Http;
 using API.Logging;
@@ -24,6 +25,43 @@ namespace API.WindowsService
     {
         public void Configuration(IAppBuilder appBuilder)
         {
+            // Only enable Ntlm if we're listening on https
+            if (ConfigurationManager.AppSettings["ListenAddress"].Contains("https"))
+            {
+                var listener = (HttpListener)appBuilder.Properties["System.Net.HttpListener"];
+                listener.AuthenticationSchemes = AuthenticationSchemes.Ntlm;
+            }
+
+            if (bool.TryParse(ConfigurationManager.AppSettings["ForceHttpsOnGet"], out var forceForceHttps) && forceForceHttps)
+            {
+                // Force GET requests to https
+                appBuilder.Use(async (context, next) =>
+                {
+                    if (context.Request.IsSecure || context.Request.Method != "GET")
+                    {
+                        await next();
+                    }
+                    else
+                    {
+                        var secureUrl = ConfigurationManager.AppSettings["ListenAddress"].Split(';').FirstOrDefault(u => u.Contains("https"));
+                        if (!string.IsNullOrEmpty(secureUrl))
+                        {
+                            var secureUri = new Uri(secureUrl);
+                            // http-->https and replace port number
+                            var withHttps = Uri.UriSchemeHttps +
+                                            Uri.SchemeDelimiter +
+                                            context.Request.Uri.Host +
+                                            ":" +
+                                            secureUri.Port +
+                                            context.Request.Uri.GetComponents(UriComponents.PathAndQuery, UriFormat.SafeUnescaped);
+
+                            context.Response.Redirect(withHttps);
+                        }
+                    }
+                });
+            }
+
+
             HttpConfiguration config = new HttpConfiguration();
 
             config.Routes.MapHttpRoute(

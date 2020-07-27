@@ -6,9 +6,11 @@ using Contract;
 using Dapper;
 using Contract.Models;
 using System.Configuration;
+using API.WindowsService.Filters;
 
 namespace API.WindowsService.Controllers
 {
+    [ApiAuthorization]
     public class HealthCheckController : ApiController
     {
         private readonly IHelper _helper;

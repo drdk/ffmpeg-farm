@@ -117,6 +117,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
@@ -173,6 +174,7 @@
     <Compile Include="Controllers\SystemStatusController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="FileShareHealthCheck.cs" />
+    <Compile Include="Filters\ApiAuthorizationAttribute.cs" />
     <Compile Include="Models\DeinterlacingJobRequestModel.cs" />
     <Compile Include="Models\HardSubtitlesJobRequestModel.cs" />
     <Compile Include="Models\AudioDemuxJobRequestModel.cs" />

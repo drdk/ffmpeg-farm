@@ -9,6 +9,7 @@ using System.Transactions;
 using System.Web.Http;
 using System.Web.Http.Description;
 using API.Service;
+using API.WindowsService.Filters;
 using API.WindowsService.Models;
 using Contract;
 
@@ -16,6 +17,7 @@ using Contract;
 
 //namespace API.WindowsService.Controllers
 //{
+//[ApiAuthorization]
 //public class VideoJobController : ApiController
 //{
 //    private readonly IVideoJobRepository _repository;
