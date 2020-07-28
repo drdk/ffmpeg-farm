@@ -18,7 +18,7 @@ namespace FFmpegFarm.Worker
 
         private readonly StatusClient _statusClient;
         private readonly TaskClient _taskClient;
-        private static readonly HttpClient HttpClient = new HttpClient{Timeout = TimeSpan.FromSeconds(10)};
+        private static readonly HttpClient HttpClient = new HttpClient(new HttpClientHandler { UseDefaultCredentials = true }) {Timeout = TimeSpan.FromSeconds(10)};
         private static object GetNextTaskLock = new object();
 
         public ApiWrapper(string apiUri, ILogger logger, CancellationToken ct)
