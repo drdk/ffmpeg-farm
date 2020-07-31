@@ -13,6 +13,7 @@ namespace Contract
         Screenshot,
         StereoTool,
         Scrubbing,
-        Deinterlacing
+        Deinterlacing,
+        Validation
     }
 }

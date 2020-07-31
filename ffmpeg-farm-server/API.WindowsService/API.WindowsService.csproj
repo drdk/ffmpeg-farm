@@ -173,6 +173,7 @@
     <Compile Include="Controllers\ScrubbingJobController.cs" />
     <Compile Include="Controllers\SystemStatusController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
+    <Compile Include="Controllers\ValidationJobController.cs" />
     <Compile Include="FileShareHealthCheck.cs" />
     <Compile Include="Filters\ApiAuthorizationAttribute.cs" />
     <Compile Include="Models\DeinterlacingJobRequestModel.cs" />
@@ -181,6 +182,7 @@
     <Compile Include="Models\LoudnessJobRequestModel.cs" />
     <Compile Include="Models\ScreenshotJobRequestModel.cs" />
     <Compile Include="Models\ScrubbingJobRequestModel.cs" />
+    <Compile Include="Models\ValidationJobRequestModel.cs" />
     <Compile Include="Validators\DeinterlacingJobRequestValidator.cs" />
     <Compile Include="Validators\HardSubtitlesJobRequestValidator.cs" />
     <Compile Include="Models\Command.cs" />
@@ -255,6 +257,7 @@
     <Content Include="App_Data\SchemaChanges_180806_scrubbing.sql" />
     <Content Include="App_Data\SchemaChanges_190529_WorkerHealthCheck.sql" />
     <Content Include="App_Data\SchemaChanges_190531_Janitor_index.sql" />
+    <Content Include="App_Data\SchemaChanges_200731_validation.sql" />
     <Content Include="App_Data\SchemaCreate.sql" />
     <Content Include="App_Data\SchemaChanges.sql" />
     <Content Include="App_Data\WindowsService.XML">

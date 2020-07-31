@@ -134,6 +134,7 @@
     <Compile Include="IMuxJobRepository.cs" />
     <Compile Include="IScreenshotJobRepository.cs" />
     <Compile Include="IScrubbingJobRepository.cs" />
+    <Compile Include="IValidationJobRepository.cs" />
     <Compile Include="JobRequest.cs" />
     <Compile Include="JobRequestBase.cs" />
     <Compile Include="JobStatusModel.cs" />
@@ -164,6 +165,8 @@
     <Compile Include="ScrubbingJob.cs" />
     <Compile Include="ScrubbingJobRequest.cs" />
     <Compile Include="SpriteSheetSize.cs" />
+    <Compile Include="ValidationJob.cs" />
+    <Compile Include="ValidationJobRequest.cs" />
     <Compile Include="VideoTranscodingJob.cs" />
     <Compile Include="JobRequestExamples.cs" />
     <Compile Include="TranscodingJobState.cs" />
