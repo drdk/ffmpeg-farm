@@ -62,6 +62,7 @@ namespace API.WindowsService.Controllers
                 if (info.Duration <= 0)
                     throw new InvalidDataException($"Validation request failed. Input file is invalid. Duration: {info.Duration} sec.");
 
+                // TODO different arguemnt for video/audio?
                 var arguments = $"-v warning -xerror -i \"{sourceFilename}\" -map 0:1? -f null -";
                 var validationJob = new ValidationJob
                 {
