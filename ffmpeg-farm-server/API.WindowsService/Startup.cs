@@ -148,6 +148,11 @@ namespace API.WindowsService
                     .Ctor<string>("connectionString")
                     .Is(ConfigurationManager.ConnectionStrings["mssql"].ConnectionString);
 
+                _.For<IValidationJobRepository>()
+                    .Use<ValidationJobRepository>()
+                    .Ctor<string>("connectionString")
+                    .Is(ConfigurationManager.ConnectionStrings["mssql"].ConnectionString);
+
                 _.For<IJobRepository>()
                     .Use<JobRepository>();
 

@@ -226,7 +226,7 @@ namespace FFmpegFarm.Worker
                     }
 
                     var destDir = Path.GetDirectoryName(_currentTask.DestinationFilename);
-                    if (!Directory.Exists(destDir))
+                    if (destDir != null && !Directory.Exists(destDir))
                         Directory.CreateDirectory(destDir);
 
                     int exitCode = -1;
@@ -361,8 +361,7 @@ namespace FFmpegFarm.Worker
                     else
                     {
                         _currentTask.State = FFmpegTaskDtoState.Done;
-                        _logger.Information($"Job done {_currentTask.Id}. Time elapsed : {_stopwatch.Elapsed:g}",
-                            _threadId);
+                        _logger.Information($"Job done {_currentTask.Id}. Time elapsed : {_stopwatch.Elapsed:g}", _threadId);
                     }
                     UpdateTask(_currentTask);
 

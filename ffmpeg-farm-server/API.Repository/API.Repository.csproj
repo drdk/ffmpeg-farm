@@ -81,6 +81,7 @@
     <Compile Include="ScrubbingJobRepository.cs" />
     <Compile Include="TransactionUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationJobRepository.cs" />
     <Compile Include="WorkerNodesHealthCheck.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -71,6 +71,11 @@ FROM FfmpegScrubbingRequest Requests
 INNER JOIN FFmpegjobs Jobs ON Requests.JobCorrelationId = Jobs.JobCorrelationId 
 WHERE Jobs.[Created] < @filter
 
+DELETE TOP(@batchsize) Requests
+FROM FfmpegValidationRequest Requests
+INNER JOIN FFmpegjobs Jobs ON Requests.JobCorrelationId = Jobs.JobCorrelationId 
+WHERE Jobs.[Created] < @filter
+
 DELETE TOP(@batchsize) Tasks
 FROM FfmpegTasks Tasks
 INNER JOIN FFmpegjobs Jobs ON Tasks.FfmpegJobs_id = Jobs.id
