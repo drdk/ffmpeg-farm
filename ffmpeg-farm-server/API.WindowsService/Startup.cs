@@ -29,7 +29,7 @@ namespace API.WindowsService
             if (ConfigurationManager.AppSettings["ListenAddress"].Contains("https"))
             {
                 var listener = (HttpListener)appBuilder.Properties["System.Net.HttpListener"];
-                listener.AuthenticationSchemes = AuthenticationSchemes.Ntlm;
+                listener.AuthenticationSchemes = AuthenticationSchemes.Ntlm | AuthenticationSchemes.Anonymous;
             }
 
             if (bool.TryParse(ConfigurationManager.AppSettings["ForceHttpsOnGet"], out var forceForceHttps) && forceForceHttps)
