@@ -118,7 +118,7 @@
     <Message Text="Downloading ffmpeg" Importance="high" />
     <MSBuild.ExtensionPack.Web.WebClient TaskAction="DownloadFile" Url="https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2021-02-28-12-32/ffmpeg-n4.3.2-160-gfbb9368226-win64-gpl-4.3.zip" FileName="$(OutputPath)\Data\ffmpeg.zip" />
     <MSBuild.ExtensionPack.Compression.Zip TaskAction="Extract" ZipFileName="$(OutputPath)\Data\ffmpeg.zip" ExtractPath="$(OutputPath)\Data" />
-    <Copy SourceFiles="$(OutputPath)\Data\ffmpeg-n4.3.1-20-g8a2acdc6da-win64-gpl-4.3\bin\ffmpeg.exe" DestinationFolder="$(OutputPath)\Data" />
+    <Copy SourceFiles="$(OutputPath)\Data\ffmpeg-n4.3.2-160-gfbb9368226-win64-gpl-4.3\bin\ffmpeg.exe" DestinationFolder="$(OutputPath)\Data" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
