@@ -12,7 +12,7 @@ namespace FFmpegFarm.WindowsService.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -34,7 +34,7 @@ namespace FFmpegFarm.WindowsService.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\ondnas01.net.dr.dk\\MediaCache\\ffmpeg-farm\\logfiles")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\net\\ODudv\\state\\FfmpegFarm\\Logfiles")]
         public string FFmpegLogPath {
             get {
                 return ((string)(this["FFmpegLogPath"]));
@@ -53,8 +53,9 @@ namespace FFmpegFarm.WindowsService.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("FC_CONFIG_DIR=\\\\ondnas01\\MediaCache;FONTCONFIG_FILE=\\\\ondnas01\\MediaCache\\fonts.c" +
-            "onf;FONTCONFIG_PATH=\\\\ondnas01\\MediaCache")]
+        [global::System.Configuration.DefaultSettingValueAttribute("FC_CONFIG_DIR=\\\\net\\ODudv\\state\\FfmpegFarm\\Tooling\\ffmpegfonts;FONTCONFIG_FILE=\\\\" +
+            "net\\ODudv\\state\\FfmpegFarm\\Tooling\\ffmpegfonts\\fonts.conf;FONTCONFIG_PATH=\\\\net\\" +
+            "ODudv\\state\\FfmpegFarm\\Tooling\\ffmpegfonts")]
         public string EnvorimentVars {
             get {
                 return ((string)(this["EnvorimentVars"]));
@@ -63,7 +64,8 @@ namespace FFmpegFarm.WindowsService.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\net.dr.dk\\od$\\Tools\\ffmpeg-3.2-win64-static\\bin\\ffmpeg.exe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\net\\ODudv\\state\\FfmpegFarm\\Tooling\\Ffmpeg\\ffmpeg-3.4.1-win64-static\\bin\\ffmpeg." +
+            "exe")]
         public string FFmpegPath {
             get {
                 return ((string)(this["FFmpegPath"]));
@@ -72,7 +74,7 @@ namespace FFmpegFarm.WindowsService.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\ondnas01.net.dr.dk\\MediaCacheTest\\ffmpeg-farm\\stereotool\\stereo_tool_cmd.exe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\net\\ODudv\\state\\FfmpegFarm\\Tooling\\stereotool\\stereo_tool_cmd_9.02.exe")]
         public string StereoToolPath {
             get {
                 return ((string)(this["StereoToolPath"]));
@@ -81,7 +83,7 @@ namespace FFmpegFarm.WindowsService.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\ondnas01.net.dr.dk\\MediaCacheTest\\ffmpeg-farm\\stereotool\\presets\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\net\\ODudv\\state\\FfmpegFarm\\Tooling\\stereotool\\presets\\")]
         public string StereoToolPresetsPath {
             get {
                 return ((string)(this["StereoToolPresetsPath"]));
@@ -90,7 +92,7 @@ namespace FFmpegFarm.WindowsService.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\\\\ondnas01.net.dr.dk\\MediaCacheTest\\ffmpeg-farm\\stereotool\\license")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\\\net\\ODudv\\state\\FfmpegFarm\\Tooling\\stereotool\\license")]
         public string StereoToolLicensePath {
             get {
                 return ((string)(this["StereoToolLicensePath"]));

@@ -6,25 +6,25 @@
       <Value Profile="(Default)">4</Value>
     </Setting>
     <Setting Name="FFmpegLogPath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">\\ondnas01.net.dr.dk\MediaCache\ffmpeg-farm\logfiles</Value>
+      <Value Profile="(Default)">\\net\ODudv\state\FfmpegFarm\Logfiles</Value>
     </Setting>
     <Setting Name="ControllerApi" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://od01udv.net.dr.dk:9000</Value>
     </Setting>
     <Setting Name="EnvorimentVars" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">FC_CONFIG_DIR=\\ondnas01\MediaCache;FONTCONFIG_FILE=\\ondnas01\MediaCache\fonts.conf;FONTCONFIG_PATH=\\ondnas01\MediaCache</Value>
+      <Value Profile="(Default)">FC_CONFIG_DIR=\\net\ODudv\state\FfmpegFarm\Tooling\ffmpegfonts;FONTCONFIG_FILE=\\net\ODudv\state\FfmpegFarm\Tooling\ffmpegfonts\fonts.conf;FONTCONFIG_PATH=\\net\ODudv\state\FfmpegFarm\Tooling\ffmpegfonts</Value>
     </Setting>
     <Setting Name="FFmpegPath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">\\net.dr.dk\od$\Tools\ffmpeg-3.2-win64-static\bin\ffmpeg.exe</Value>
+      <Value Profile="(Default)">\\net\ODudv\state\FfmpegFarm\Tooling\Ffmpeg\ffmpeg-3.4.1-win64-static\bin\ffmpeg.exe</Value>
     </Setting>
     <Setting Name="StereoToolPath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">\\ondnas01.net.dr.dk\MediaCacheTest\ffmpeg-farm\stereotool\stereo_tool_cmd.exe</Value>
+      <Value Profile="(Default)">\\net\ODudv\state\FfmpegFarm\Tooling\stereotool\stereo_tool_cmd_9.02.exe</Value>
     </Setting>
     <Setting Name="StereoToolPresetsPath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">\\ondnas01.net.dr.dk\MediaCacheTest\ffmpeg-farm\stereotool\presets\</Value>
+      <Value Profile="(Default)">\\net\ODudv\state\FfmpegFarm\Tooling\stereotool\presets\</Value>
     </Setting>
     <Setting Name="StereoToolLicensePath" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">\\ondnas01.net.dr.dk\MediaCacheTest\ffmpeg-farm\stereotool\license</Value>
+      <Value Profile="(Default)">\\net\ODudv\state\FfmpegFarm\Tooling\stereotool\license</Value>
     </Setting>
     <Setting Name="ForceTempFolder" Type="System.String" Scope="Application">
       <Value Profile="(Default)">D:\Temp</Value>
