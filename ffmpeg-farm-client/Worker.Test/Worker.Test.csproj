@@ -116,7 +116,7 @@
   </Target>
   <Target Name="DownloadFFMPEG" AfterTargets="Build" Condition="!Exists('$(OutputPath)\Data\ffmpeg.exe')">
     <Message Text="Downloading ffmpeg" Importance="high" />
-    <MSBuild.ExtensionPack.Web.WebClient TaskAction="DownloadFile" Url="https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2020-10-05-12-30/ffmpeg-n4.3.1-20-g8a2acdc6da-win64-gpl-4.3.zip" FileName="$(OutputPath)\Data\ffmpeg.zip" />
+    <MSBuild.ExtensionPack.Web.WebClient TaskAction="DownloadFile" Url="https://github.com/BtbN/FFmpeg-Builds/releases/download/autobuild-2021-02-28-12-32/ffmpeg-n4.3.2-160-gfbb9368226-win64-gpl-4.3.zip" FileName="$(OutputPath)\Data\ffmpeg.zip" />
     <MSBuild.ExtensionPack.Compression.Zip TaskAction="Extract" ZipFileName="$(OutputPath)\Data\ffmpeg.zip" ExtractPath="$(OutputPath)\Data" />
     <Copy SourceFiles="$(OutputPath)\Data\ffmpeg-n4.3.1-20-g8a2acdc6da-win64-gpl-4.3\bin\ffmpeg.exe" DestinationFolder="$(OutputPath)\Data" />
   </Target>
